@@ -1,24 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use Illuminate\Http\Request;
-use App\Models\Content;
+use Illuminate\Database\Eloquent\Model;
 
-class ContentController extends Controller
+class Content extends Model
 {
-  
-    public function search(Request $request)
+    protected $fillable = ['title', 'content', 'language_id', 'user_id'];
+
+    public function language()
     {
-        $languages = Language::all();
-        $contents = [];
+        return $this->belongsTo(Language::class);
+    }
 
-        if ($request->filled('query')) {
-            $contents = Content::where('language_id', $request->language_id)
-                ->whereFullText(['title', 'content'], $request->query)
-                ->get();
-        }
-
-        return view('search', compact('languages', 'contents'));
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -2,22 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content','language_id'];
 
-    public function language(){
-        return $this->belongsTo(Language::class);
-    }
-        public static function search($query)
+    protected $fillable = [
+        'title',
+        'content',
+        'language_id',
+        'user_id',
+    ];
+
+    public function language()
     {
-        return self::whereRaw(
-            "MATCH(title, content) AGAINST(? IN NATURAL LANGUAGE MODE)",
-            [$query]
-        )->get();
+        return $this->belongsTo(Language::class, 'language_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
