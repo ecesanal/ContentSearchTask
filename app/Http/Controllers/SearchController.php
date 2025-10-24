@@ -7,24 +7,28 @@ use App\Models\Content;
 
 class SearchController extends Controller
 {
-    public function search(Request $request)
-{
-    $query = $request->input('q');
-    $lang = $request->input('lang');
-    $results = [];
-
-    if ($query && $lang) {
-        $results = Content::where('language_id', $lang)
-                    ->where(function($q) use ($query) {
-                        $q->where('title', 'like', "%{$query}%")
-                          ->orWhere('content', 'like', "%{$query}%");
-                    })
-                    ->get();
-    } elseif ($lang) {
-        $results = Content::where('language_id', $lang)->get();
+    public function index()
+    {
+        return view('search');
     }
 
-    return view('search', compact('results', 'query'));
-}
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+        $lang = $request->input('lang');
+        $results = [];
 
+        if ($query && $lang) {
+            $results = Content::where('language_id', $lang)
+                ->where(function($q) use ($query) {
+                    $q->where('title', 'like', "%{$query}%")
+                      ->orWhere('content', 'like', "%{$query}%");
+                })
+                ->get();
+        } elseif ($lang) {
+            $results = Content::where('language_id', $lang)->get();
+        }
+
+        return view('search', compact('results', 'query', 'lang'));
+    }
 }
