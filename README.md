@@ -11,3 +11,7 @@
 <img width="1514" height="664" alt="Ekran görüntüsü 2025-10-23 174801" src="https://github.com/user-attachments/assets/8bc81bca-1794-43ce-b559-4b8d492222f2" />
 <img width="1107" height="609" alt="Ekran görüntüsü 2025-10-23 174331" src="https://github.com/user-attachments/assets/5aa91117-0525-4d6f-8aaa-24087dda64e0" />
 >>>>>>> e73589f67f652ce0d57f0bcab3a291da051d51bd
+<img width="1385" height="856" alt="Ekran görüntüsü 2025-10-24 171034" src="https://github.com/user-attachments/assets/54c15271-32c3-49da-a7b1-9c091a21901b" />
+<img width="985" height="572" alt="Ekran görüntüsü 2025-10-24 164436" src="https://github.com/user-attachments/assets/1ed08cc3-1019-4d33-9169-d480afe2a3fd" />
+<img width="1596" height="712" alt="Ekran görüntüsü 2025-10-24 164423" src="https://github.com/user-attachments/assets/d7623a0b-9eb0-4156-a4b2-5fb252ddcee4" />
+<img width="1917" height="898" alt="Ekran görüntüsü 2025-10-24 164417" src="https://github.com/user-attachments/assets/0d2e06d8-feb7-4061-8d82-76bc6e1c5d74" />
